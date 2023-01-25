@@ -1,5 +1,7 @@
 package com.Mr_McGilicuty.atmospheric_condensers;
 
+import com.Mr_McGilicuty.atmospheric_condensers.block.ModBlocks;
+import com.Mr_McGilicuty.atmospheric_condensers.item.ModItems;
 import com.mojang.logging.LogUtils;
 import net.minecraft.client.Minecraft;
 import net.minecraft.world.item.BlockItem;
@@ -35,6 +37,9 @@ public class AtmosphericCondensers
     public AtmosphericCondensers()
     {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
+
+        ModItems.register(modEventBus);
+        ModBlocks.register(modEventBus);
 
         modEventBus.addListener(this::commonSetup);
 
