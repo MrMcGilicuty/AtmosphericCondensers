@@ -2,6 +2,8 @@ package com.Mr_McGilicuty.atmospheric_condensers;
 
 import com.Mr_McGilicuty.atmospheric_condensers.block.ModBlocks;
 import com.Mr_McGilicuty.atmospheric_condensers.item.ModItems;
+import com.Mr_McGilicuty.atmospheric_condensers.world.feature.ModConfiguredFeatures;
+import com.Mr_McGilicuty.atmospheric_condensers.world.feature.ModPlacedFeatures;
 import com.mojang.logging.LogUtils;
 import net.minecraft.client.Minecraft;
 import net.minecraft.world.item.BlockItem;
@@ -40,6 +42,9 @@ public class AtmosphericCondensers
 
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
+
+        ModConfiguredFeatures.register(modEventBus);
+        ModPlacedFeatures.register(modEventBus);
 
         modEventBus.addListener(this::commonSetup);
 

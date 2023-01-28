@@ -28,13 +28,13 @@ public class ModBlocks {
 
 
     public static final RegistryObject<Block> SILICA_SAND = registerBlock("silica_sand", () -> new FallingBlock(BlockBehaviour.Properties.of(Material.SAND)
-    .strength(2f)
+    .strength(1f)
     .sound(SoundType.SAND)), ModCreativeModeTab.ATMO_TAB);
 
     public static final RegistryObject<Block> BITUMEN_ORE = registerBlock("bitumen_ore", () -> new DropExperienceBlock(BlockBehaviour.Properties.of(Material.STONE)
     .strength(2f)
     .sound(SoundType.STONE)
-    .requiresCorrectToolForDrops(), UniformInt.of(3,5)), ModCreativeModeTab.ATMO_TAB);
+    .requiresCorrectToolForDrops(), UniformInt.of(2,3)), ModCreativeModeTab.ATMO_TAB);
 
 
 
