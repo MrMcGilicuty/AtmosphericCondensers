@@ -33,7 +33,7 @@ public class ModBlocks {
 
     public static final RegistryObject<Block> BITUMEN_ORE = registerBlock("bitumen_ore", () -> new DropExperienceBlock(BlockBehaviour.Properties.of(Material.STONE)
     .strength(2f)
-    .sound(SoundType.SAND)
+    .sound(SoundType.STONE)
     .requiresCorrectToolForDrops(), UniformInt.of(3,5)), ModCreativeModeTab.ATMO_TAB);
 
 

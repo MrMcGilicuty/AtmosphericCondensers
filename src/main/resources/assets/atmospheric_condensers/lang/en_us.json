@@ -1,6 +1,15 @@
 {
     "item.atmospheric_condensers.bitumen": "Bitumen",
+    "item.atmospheric_condensers.circuit_boardv1": "Lowly Circuit Board",
+    "item.atmospheric_condensers.circuit_boardv2": "Basic Circuit Board",
     "item.atmospheric_condensers.silica_dust": "Silica Dust",
+    "item.atmospheric_condensers.liquid_nitrogen_bucket": "Liquid Nitrogen Bucket",
+    "item.atmospheric_condensers.raw_circuit_board": "Raw Circuit Board",
+    "item.atmospheric_condensers.silicon_mixture": "Silicon Mixture",
+    "item.atmospheric_condensers.silicon": "Silicon",
+    "item.atmospheric_condensers.transistor_feet": "Transistor Wiring",
+    "item.atmospheric_condensers.transistor_head": "Transistor Head",
+    "item.atmospheric_condensers.transistor": "Transistor",
 
     "block.atmospheric_condensers.silica_sand": "Silica Sand",
     "block.atmospheric_condensers.bitumen_ore": "Bitumen Ore",
