@@ -1,11 +1,16 @@
 package com.Mr_McGilicuty.atmospheric_condensers;
 
 import com.Mr_McGilicuty.atmospheric_condensers.block.ModBlocks;
+import com.Mr_McGilicuty.atmospheric_condensers.fluid.ModFluidTypes;
+import com.Mr_McGilicuty.atmospheric_condensers.fluid.ModFluids;
 import com.Mr_McGilicuty.atmospheric_condensers.item.ModItems;
+import com.Mr_McGilicuty.atmospheric_condensers.networking.ModMessages;
 import com.Mr_McGilicuty.atmospheric_condensers.world.feature.ModConfiguredFeatures;
 import com.Mr_McGilicuty.atmospheric_condensers.world.feature.ModPlacedFeatures;
 import com.mojang.logging.LogUtils;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.renderer.ItemBlockRenderTypes;
+import net.minecraft.client.renderer.RenderType;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
@@ -43,6 +48,9 @@ public class AtmosphericCondensers
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
 
+        ModFluidTypes.register(modEventBus);
+        ModFluids.register(modEventBus);
+
         ModConfiguredFeatures.register(modEventBus);
         ModPlacedFeatures.register(modEventBus);
 
@@ -53,6 +61,9 @@ public class AtmosphericCondensers
 
     private void commonSetup(final FMLCommonSetupEvent event)
     {
+        event.enqueueWork(() -> {
+            ModMessages.register();
+        });
     }
 
     // You can use EventBusSubscriber to automatically register all static methods in the class annotated with @SubscribeEvent
@@ -62,6 +73,8 @@ public class AtmosphericCondensers
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event)
         {
+            ItemBlockRenderTypes.setRenderLayer(ModFluids.SOURCE_NITROGEN_WATER.get(), RenderType.translucent());
+            ItemBlockRenderTypes.setRenderLayer(ModFluids.FLOWING_NITROGEN_WATER.get(), RenderType.translucent());
         }
     }
 }

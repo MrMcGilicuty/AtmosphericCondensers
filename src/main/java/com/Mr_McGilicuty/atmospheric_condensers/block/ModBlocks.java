@@ -4,6 +4,7 @@ import java.util.function.Supplier;
 
 
 import com.Mr_McGilicuty.atmospheric_condensers.AtmosphericCondensers;
+import com.Mr_McGilicuty.atmospheric_condensers.fluid.ModFluids;
 import com.Mr_McGilicuty.atmospheric_condensers.item.ModCreativeModeTab;
 import com.Mr_McGilicuty.atmospheric_condensers.item.ModItems;
 
@@ -12,8 +13,10 @@ import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.DropExperienceBlock;
 import net.minecraft.world.level.block.FallingBlock;
+import net.minecraft.world.level.block.LiquidBlock;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.Material;
@@ -36,7 +39,8 @@ public class ModBlocks {
     .sound(SoundType.STONE)
     .requiresCorrectToolForDrops(), UniformInt.of(2,3)), ModCreativeModeTab.ATMO_TAB);
 
-
+    public static final RegistryObject<LiquidBlock> NITROGEN_WATER_BLOCK = BLOCKS.register("nitrogen_water_block", () -> new LiquidBlock(ModFluids.SOURCE_NITROGEN_WATER, BlockBehaviour.Properties
+    .copy(Blocks.WATER)));
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block, CreativeModeTab tab) {
         RegistryObject<T> toReturn = BLOCKS.register(name, block);

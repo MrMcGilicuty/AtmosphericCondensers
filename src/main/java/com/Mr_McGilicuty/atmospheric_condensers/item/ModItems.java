@@ -1,8 +1,11 @@
 package com.Mr_McGilicuty.atmospheric_condensers.item;
 
 import com.Mr_McGilicuty.atmospheric_condensers.AtmosphericCondensers;
+import com.Mr_McGilicuty.atmospheric_condensers.fluid.ModFluids;
 
+import net.minecraft.world.item.BucketItem;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.Items;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -25,11 +28,15 @@ public class ModItems {
     public static final RegistryObject<Item> CIRCUIT_BOARDV2 = ITEMS.register("circuit_boardv2", 
     () -> new Item(new Item.Properties().tab(ModCreativeModeTab.ATMO_TAB)));
 
-    public static final RegistryObject<Item> LIQUID_NITROGEN_BUCKET = ITEMS.register("liquid_nitrogen_bucket", 
-    () -> new Item(new Item.Properties().tab(ModCreativeModeTab.ATMO_TAB)));
-
     public static final RegistryObject<Item> RAW_CIRCUIT_BOARD = ITEMS.register("raw_circuit_board", 
     () -> new Item(new Item.Properties().tab(ModCreativeModeTab.ATMO_TAB)));
+
+
+    public static final RegistryObject<Item> LIQUID_NITROGEN_BUCKET = ITEMS.register("liquid_nitrogen_bucket", 
+    () -> new BucketItem(ModFluids.SOURCE_NITROGEN_WATER, new Item.Properties().tab(ModCreativeModeTab.ATMO_TAB)
+    .stacksTo(1)
+    .craftRemainder(Items.BUCKET)));
+
 
     public static final RegistryObject<Item> SILICON_MIXTURE = ITEMS.register("silicon_mixture", 
     () -> new Item(new Item.Properties().tab(ModCreativeModeTab.ATMO_TAB)));
@@ -44,7 +51,7 @@ public class ModItems {
     () -> new Item(new Item.Properties().tab(ModCreativeModeTab.ATMO_TAB)));
 
     public static final RegistryObject<Item> TRANSISTOR = ITEMS.register("transistor", 
-    () -> new Item(new Item.Properties().tab(ModCreativeModeTab.ATMO_TAB)));
+    () -> new Item(new Item.Properties().tab(ModCreativeModeTab.ATMO_TAB).stacksTo(1)));
 
 
 
